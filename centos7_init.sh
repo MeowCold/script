@@ -35,6 +35,7 @@ echo "接下来请手动编辑文件 /etc/ssh/sshd_config，
 vi /etc/ssh/sshd_config 
 firewall-cmd --add-port $port/tcp --permanent
 firewall-cmd --add-port $port/tcp
+firewall-cmd --reload
 systemctl restart sshd 
 
 # 下面使用新账户设置
@@ -47,15 +48,15 @@ read passwd
 echo "设置 shadowsocks 端口"
 read port
 pip install git+https://github.com/shadowsocks/shadowsocks.git@master
-ssserver -p $port -k $passwd -m aes-256-cfb --user nobody -d start
+sudo ssserver -p $port -k $passwd -m aes-256-cfb --user nobody -d start
 
 # pyenv
 curl -L https://github.com/pyenv/pyenv-installer/raw/master/bin/pyenv-installer | bash
 echo '
 export PATH="~/.pyenv/bin:$PATH"
 eval "$(pyenv init -)"
-eval "$(pyenv virtualenv-init -)"' >> .bash_profile
-source .bash_profile
+eval "$(pyenv virtualenv-init -)"' >> .bashrc
+source .bashrc
 
 pyenv install -l
 
@@ -70,8 +71,8 @@ mkdir ~/go
 wget https://dl.google.com/go/go1.10.1.linux-amd64.tar.gz
 tar -C /usr/local -xzf go1.10.1.linux-amd64.tar.gz
 echo "export PATH=$PATH:/usr/local/go/bin
-export GOPATH=~/go" >> .bash_profile
-source ~/.bash_profile
+export GOPATH=~/go" >> .bashrc
+source ~/.bashrc
 
 # zsh
 sudo yum -y install zsh
