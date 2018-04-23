@@ -17,7 +17,14 @@ usermod -aG wheel $name
 su - $name
 cd ~
 mkdir .ssh
+echo "是否需要上传公钥 Y/N?"
+read anwser
 touch ~/.ssh/authorized_keys
+if [$anwser == 'Y']
+then
+    vim ~/.ssh/authorized_keys
+fi
+
 chmod 700 ~/.ssh
 chmod 600 ~/.ssh/authorized_keys
 exit
@@ -77,4 +84,4 @@ source ~/.bashrc
 # zsh
 sudo yum -y install zsh
 sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-
+echo "source ~/.bashrc" >> ~/.zshrc
