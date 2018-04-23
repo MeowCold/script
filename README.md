@@ -1,2 +1,3 @@
 # script
-auto initialization
+centos 7 自动准备脚本
+
