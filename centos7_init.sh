@@ -1,4 +1,4 @@
-yun -y update
+yum -y update
 yum -y install yum-utils
 yum -y groupinstall 'Development Tools'
 yum -y install python-setuptools 
