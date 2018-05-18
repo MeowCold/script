@@ -32,3 +32,11 @@ make install
 # https://certbot.eff.org/lets-encrypt/centosrhel7-nginx
  sudo yum install certbot-nginx
  sudo certbot --nginx
+
+# docker
+# https://docs.docker.com/install/linux/docker-ce/centos/
+sudo yum install -y yum-utils device-mapper-persistent-data lvm2
+sudo yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
+sudo yum -y install docker-ce
+sudo systemctl start docker
+
