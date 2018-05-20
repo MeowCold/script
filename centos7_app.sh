@@ -40,3 +40,17 @@ sudo yum-config-manager --add-repo https://download.docker.com/linux/centos/dock
 sudo yum -y install docker-ce
 sudo systemctl start docker
 
+
+# golang
+mkdir ~/go
+wget https://dl.google.com/go/go1.10.1.linux-amd64.tar.gz
+tar -C /usr/local -xzf go1.10.1.linux-amd64.tar.gz
+echo "export PATH=$PATH:/usr/local/go/bin
+export GOPATH=~/go" >> .bashrc
+source ~/.bashrc
+
+
+# zsh
+sudo yum -y install zsh
+sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+echo "source ~/.bashrc" >> ~/.zshrc
