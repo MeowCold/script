@@ -3,10 +3,7 @@ yum -y install yum-utils
 yum -y install vim
 yum -y groupinstall 'Development Tools'
 yum -y install python-setuptools 
-yum install -y readline readline-devel readline-static 
-yum install -y openssl openssl-devel openssl-static
-yum install -y sqlite-devel
-yum install -y bzip2-devel bzip2-libs
+yum install -y readline readline-devel readline-static openssl openssl-devel openssl-static sqlite-devel bzip2-devel bzip2-libs epel-release
 easy_install pip
 
 # 新建用户
