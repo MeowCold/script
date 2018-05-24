@@ -15,7 +15,9 @@ make
 # MySQL
 # https://dev.mysql.com/doc/refman/8.0/en/linux-installation-yum-repo.html
 wget https://dev.mysql.com/get/mysql80-community-release-el7-1.noarch.rpm
-sudo yum install mysql80-community-release-el7-1.noarch.rpm
+sudo yum localinstall mysql80-community-release-el7-1.noarch.rpm
+sudo yum-config-manager --enable mysql80-community
+sudo yum install mysql-community-server
 
 # Nginx
 wget https://nginx.org/download/nginx-1.14.0.tar.gz
