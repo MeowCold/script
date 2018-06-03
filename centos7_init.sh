@@ -69,5 +69,5 @@ pyenv install $python_version
 
 pyenv local $python_version
 
-su - $name "git clone https://github.com/jianjian01/script.git && bash script/sub_user.sh" 
-systemctl restart sshd 
+# su - $name "git clone https://github.com/jianjian01/script.git && bash script/sub_user.sh" 
+# systemctl restart sshd 
