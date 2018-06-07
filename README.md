@@ -8,6 +8,8 @@ centos 7 自动准备脚本
 - 禁用 root 用户登陆，改变 ssh 端口
 - 安装pyenv、python、golang
 
+`wget https://raw.githubusercontent.com/jianjian01/script/master/centos7_init.sh; bash centos7_init.sh `
+
 ## centos app
 - 安装 Redis、MongoDB、MySQL
 - 安装 Nginx
