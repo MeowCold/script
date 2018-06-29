@@ -20,15 +20,9 @@ sudo yum-config-manager --enable mysql80-community
 sudo yum install mysql-community-server
 
 # Nginx
-wget https://nginx.org/download/nginx-1.14.0.tar.gz
-tar zxf nginx-1.14.0.tar.gz
-wget https://ftp.pcre.org/pub/pcre/pcre-8.41.tar.gz
-tar zxf pcre-8.41.tar.gz
-wget http://zlib.net/zlib-1.2.11.tar.gz
-tar zxf zlib-1.2.11.tar.gz
-./configure --sbin-path=/usr/local/nginx/nginx --conf-path=/usr/local/nginx/nginx.conf  --pid-path=/usr/local/nginx/nginx.pid --with-http_ssl_module --with-pcre=../pcre-8.41 --with-zlib=../zlib-1.2.11
-make
-make install
+sudo yum install epel-release
+sudo yum install nginx
+sudo systemctl start nginx
 
 # letsencrypt
 # https://certbot.eff.org/lets-encrypt/centosrhel7-nginx
